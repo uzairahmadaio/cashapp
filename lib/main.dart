@@ -1,3 +1,4 @@
+import 'package:cashapp/screens/Bottombar/bottomnavbar.dart';
 import 'package:cashapp/screens/HOME/home.dart';
 import 'package:cashapp/screens/onborading/Choose%20a%20%C2%A3Cashtag.dart';
 import 'package:cashapp/screens/onborading/Pcode.dart';

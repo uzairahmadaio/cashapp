@@ -1,3 +1,7 @@
+import 'package:cashapp/screens/HOME/home.dart';
+import 'package:cashapp/screens/History/history.dart';
+import 'package:cashapp/screens/Search/search.dart';
+import 'package:cashapp/screens/Transct/transct.dart';
 import 'package:cashapp/screens/themes/themes.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +19,10 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      // Home(),
-      // Share_screen(),
-      // Premium(),
+      Home(),
+      Transct(),
+      Search(),
+      History(),
     ];
 
     return Scaffold(
@@ -29,17 +34,17 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white, // Background color of the navigation bar
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.0), // Left radius
-            topRight: Radius.circular(30.0), // Right radius
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 10,
-              offset: Offset(0, -1),
-            ),
-          ],
+          // borderRadius: BorderRadius.only(
+          //   topLeft: Radius.circular(30.0), // Left radius
+          //   topRight: Radius.circular(30.0), // Right radius
+          // ),
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: Colors.black26,
+          //     blurRadius: 10,
+          //     offset: Offset(0, -1),
+          //   ),
+          // ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -53,11 +58,23 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.home_outlined,
-
+                  Image.asset(
+                    'assets/home.png',
+                    width: 25,
+                    height: 25,
                     color: currentIndex != 0 ? Colors.grey : kPrimaryColor,
-                    //     // Adjust the scale of the icon if needed
+                  ),
+                  // Icon(
+                  //   Icons.home_outlined,
+
+                  //   //     // Adjust the scale of the icon if needed
+                  // ),
+                  Text(
+                    'Home',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: currentIndex != 0 ? Colors.grey : kPrimaryColor,
+                    ),
                   ),
                 ],
               ),
@@ -72,10 +89,17 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.card_giftcard_outlined,
+                    Icons.currency_pound,
 
                     color: currentIndex != 1 ? Colors.grey : kPrimaryColor,
                     //     // Adjust the scale of the icon if needed
+                  ),
+                  Text(
+                    'Transact',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: currentIndex != 1 ? Colors.grey : kPrimaryColor,
+                    ),
                   ),
                 ],
               ),
@@ -90,9 +114,40 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.star_border_outlined,
+                    Icons.search,
                     color: currentIndex != 2 ? Colors.grey : kPrimaryColor,
                     //     // Adjust the scale of the icon if needed
+                  ),
+                  Text(
+                    'Search',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: currentIndex != 2 ? Colors.grey : kPrimaryColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  currentIndex = 3;
+                });
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.history,
+                    color: currentIndex != 3 ? Colors.grey : kPrimaryColor,
+                    //     // Adjust the scale of the icon if needed
+                  ),
+                  Text(
+                    'History',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: currentIndex != 3 ? Colors.grey : kPrimaryColor,
+                    ),
                   ),
                 ],
               ),
