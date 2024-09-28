@@ -7,8 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 // Let's apply dark and dark theme on our app
 // Now let's add dark theme on our appimport 'package:flutter/material.dart';
 
-const kPrimaryColor = Color.fromARGB(255, 44, 97, 182);
-const kSPrimaryColor = Color.fromARGB(255, 20, 28, 64);
+const kPrimaryColor = Color(0xFF00D6BC);
+const kSPrimaryColor = Color(0xFFCAFFEC);
 // const kPrimaryColor = Color.fromARGB(255, 226, 111, 146);
 const kSecondaryColor = Color.fromARGB(255, 1, 68, 254);
 const kContentColorLightTheme = Color.fromARGB(255, 10, 13, 29);
